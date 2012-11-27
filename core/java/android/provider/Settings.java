@@ -8791,6 +8791,12 @@ public final class Settings {
          */
         public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
 
+	/**
+         * Whether to display the ADB notification.
+         * @hide
+         */
+        public static final String ADB_NOTIFY = "adb_notify";
+
         /**
          * This are the settings to be backed up.
          *
