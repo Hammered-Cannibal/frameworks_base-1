@@ -37,7 +37,6 @@ import com.android.systemui.plugins.PluginPrefs;
 public class TunerFragment extends PreferenceFragment {
 
     private static final String TAG = "TunerFragment";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
