@@ -7667,4 +7667,9 @@ public class WindowManagerService extends IWindowManager.Stub
             }
         }
     }
+
+    @Override
+    public void screenRecordAction(int mode) {
+        mPolicy.screenRecordAction(mode);
+    }
 }
