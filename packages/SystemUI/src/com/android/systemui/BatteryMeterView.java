@@ -86,6 +86,8 @@ public class BatteryMeterView extends LinearLayout implements
     private int mStyle = BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT;
     private boolean mQsHeaderOrKeyguard;
 
+    private boolean mCharging;
+
     /**
      * Whether we should use colors that adapt based on wallpaper/the scrim behind quick settings.
      */
@@ -237,6 +239,7 @@ public class BatteryMeterView extends LinearLayout implements
             setForceShowPercent(pluggedIn);
         }
 
+        mCharging = pluggedIn;
         mDrawable.setBatteryLevel(level);
         mDrawable.setCharging(pluggedIn);
         mLevel = level;
@@ -263,7 +266,9 @@ public class BatteryMeterView extends LinearLayout implements
 
     private void updatePercentText() {
         if (mBatteryPercentView != null) {
-            mBatteryPercentView.setText(
+            CharSequence mChargeIndicator =
+                    mCharging && mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT ? "~" : "";
+            mBatteryPercentView.setText(mChargeIndicator +
                     NumberFormat.getPercentInstance().format(mLevel / 100f));
         }
     }
@@ -433,6 +438,7 @@ public class BatteryMeterView extends LinearLayout implements
             mForceShowPercent = false;
         }
         updateShowPercent();
+        updatePercentText();
         onDensityOrFontScaleChanged();
     }
 }
