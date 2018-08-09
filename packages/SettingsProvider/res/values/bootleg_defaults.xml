@@ -24,4 +24,7 @@
     <!-- Charging sounds -->
     <string name="def_battery_plugged_sound">/system/media/audio/ui/BatteryPlugged.ogg</string>
 
+    <declare-styleable name="BackArrowView"> 
+        <attr name="reversed" format="boolean" /> 
+    </declare-styleable> 
 </resources>
