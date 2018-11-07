@@ -6121,7 +6121,7 @@ message MetricsEvent {
     // END OF AOSP CONSTANTS
 
     // Bootleggers Metrics
-    BOOTLEG = 1500;
+    BOOTLEG = 2500;
 
   }
 }
